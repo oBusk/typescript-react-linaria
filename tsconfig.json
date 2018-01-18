@@ -1,0 +1,24 @@
+{
+    "files": [
+        "src/Custom.d.ts",
+        "src/index.tsx"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist"
+    ],
+    "compilerOptions": {
+        "outDir": "dist/out-tsc",
+        "target": "es6",
+        "lib": [
+            "es6",
+            "dom"
+        ],
+        "sourceMap": true,
+        "allowJs": true,
+        "jsx": "react",
+        "moduleResolution": "node",
+        "rootDir": "src",
+        "strict": true
+    }
+}

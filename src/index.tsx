@@ -1,0 +1,11 @@
+import * as React from 'react';
+
+import { render } from 'react-dom';
+
+import { App } from './App';
+
+render(
+    <App></App>,
+    document.getElementsByTagName('body')[0]
+        .appendChild(document.createElement('div')),
+);
