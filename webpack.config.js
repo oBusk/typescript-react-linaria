@@ -8,10 +8,11 @@ module.exports = {
     devtool: "cheap-module-eval-source-map",
 
     watchOptions: {
-        ignored: /(node_modules|\.cache)/,
+        ignored: /(node_modules|\.cache|dist)/,
     },
 
     entry: [
+        'babel-polyfill',
         path.join(__dirname, 'src/index.tsx'),
     ],
 
@@ -27,6 +28,7 @@ module.exports = {
         new webpack.WatchIgnorePlugin([ //
             /node_modules/,
             /\.cache/,
+            /dist/,
         ]),
 
         new htmlPlugin({ inject: true }),
@@ -41,12 +43,12 @@ module.exports = {
             {
                 test: /\.tsx?$/,
                 use: [
-                    // {
-                    //     loader: 'linaria/loader',
-                    //     options: {
-                    //         outDir: './node_modules/.cache/linaria-webpack',
-                    //     }
-                    // },
+                    {
+                        loader: 'linaria/loader',
+                        options: {
+                            outDir: '.cache/linaria-webpack',
+                        }
+                    },
                     {
                         loader: 'awesome-typescript-loader',
                         options: {

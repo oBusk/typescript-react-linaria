@@ -1,11 +1,5 @@
 {
     "presets": [
-        "env",
-        [
-            "linaria/babel",
-            {
-                "outDir": ".cache/linaria"
-            }
-        ]
+        "env"
     ]
 }
