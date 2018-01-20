@@ -22,6 +22,13 @@ module.exports = {
     },
 
     plugins: [
+        // Needed to stop webpack-dev-server from triggering ~10 times on first run.
+        // For some reason `watchOptions.ignored` does not seem to work.
+        new webpack.WatchIgnorePlugin([ //
+            /node_modules/,
+            /\.cache/,
+        ]),
+
         new htmlPlugin({ inject: true }),
     ],
 
